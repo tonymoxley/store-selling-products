@@ -10,13 +10,15 @@
 	</parent>
 	<groupId>org.arkham.examples</groupId>
 	<artifactId>store-selling-products</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>store-selling-products</name>
 	<description>Spring Boot monolithic application of product store</description>
 	<properties>
 		<java.version>11</java.version>
+		<mysql.version>8.0.28</mysql.version>
 	</properties>
 	<dependencies>
+		<!-- spring-boot dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -29,7 +31,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- vendors dependencies -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- dev and testing tools dependencies-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -47,7 +56,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<!-- tools for building project -->
 	<build>
 		<plugins>
 			<plugin>
